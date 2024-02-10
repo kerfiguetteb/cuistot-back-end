@@ -26,7 +26,6 @@ public class ConfigurationSecuriteApp {
 
     private final JwtFilter jwtFilter;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
-
     private final UserDetailsService userDetailsService;
 
     public ConfigurationSecuriteApp(JwtFilter jwtFilter, BCryptPasswordEncoder bCryptPasswordEncoder, UserDetailsService userDetailsService) {
@@ -46,7 +45,6 @@ public class ConfigurationSecuriteApp {
                                                 .requestMatchers(POST,"/inscription").permitAll()
                                                 .requestMatchers(POST,"/connexion").permitAll()
                                                 .requestMatchers(POST,"/activation").permitAll()
-
                                                 .anyRequest().authenticated()
                         )
                         .sessionManagement(httpSecuritySessionManagementConfigurer ->

@@ -65,7 +65,7 @@ public class JwtService {
         Jwt jwt = this.jwtRepository.findUtilisateurValidToken(
                 utilisateur.getEmail(),
                 false,
-                false).orElseThrow(() -> new RuntimeException("token invalide"));
+                false).orElseThrow(() -> new RuntimeException(TOKEN_INVALIDE));
         jwt.setExpire(true);
         jwt.setDesactive(true);
         this.jwtRepository.save(jwt);

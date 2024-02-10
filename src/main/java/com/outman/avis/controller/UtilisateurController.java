@@ -16,6 +16,7 @@ import java.util.Map;
 @RestController
 @RequestMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
 @AllArgsConstructor
+@CrossOrigin("*")
 public class UtilisateurController {
 
     private AuthenticationManager authenticationManager;
@@ -28,7 +29,7 @@ public class UtilisateurController {
     }
 
 
-    @PostMapping("deconnexion")
+    @PostMapping( value ="deconnexion")
     public void deconnexion(){
         this.jwtService.deconnexion();
     }
