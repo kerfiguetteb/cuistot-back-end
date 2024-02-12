@@ -1,4 +1,7 @@
 package com.outman.avis.repository;
 
-public interface IngredientRepository {
+import com.outman.avis.entite.Ingredient;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface IngredientRepository extends JpaRepository<Ingredient, Integer> {
 }
