@@ -19,7 +19,9 @@ public class IngredientService {
     public Ingredient findById(int id){ return ingredientRepository.findById(id)
             .orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND,"ingredient introuvable" ));
     }
-    public Ingredient save (Ingredient ingredient){ return ingredientRepository.save(ingredient); }
+    public Ingredient save(Ingredient ingredient){ return ingredientRepository.save(ingredient); }
 
+    public void delete(int id){ ingredientRepository.deleteById(id);}
 
+    public void deleteAll(){ingredientRepository.deleteAll();}
 }

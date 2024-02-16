@@ -21,4 +21,6 @@ public class Ingredient {
     private int id;
 
     private String name;
+
+    public Ingredient(int id){this.id = id;}
 }

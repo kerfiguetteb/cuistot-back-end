@@ -17,8 +17,10 @@ public class IngredientQuantite {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private Ingredient ingredient;
 
     private int quantite;
+
+
 }
