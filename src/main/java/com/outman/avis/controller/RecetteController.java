@@ -1,5 +1,6 @@
 package com.outman.avis.controller;
 
+import com.outman.avis.dto.recettes.RecetteDto;
 import com.outman.avis.entite.Recette;
 import com.outman.avis.service.RecetteService;
 import lombok.RequiredArgsConstructor;
@@ -17,8 +18,10 @@ public class RecetteController {
 
     private final RecetteService recetteService;
 
+
     @GetMapping("")
-    public List<Recette> findAll(){return recetteService.findAll();}
+    public List<RecetteDto> search(@RequestParam(required = false) String name){
+        return recetteService.search(name);}
 
     @GetMapping("/{id}")
     public Recette findById(@PathVariable int id){ return recetteService.findById(id);}

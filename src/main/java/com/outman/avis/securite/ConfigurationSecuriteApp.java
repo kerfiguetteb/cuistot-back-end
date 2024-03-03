@@ -46,9 +46,8 @@ public class ConfigurationSecuriteApp {
                                                 .requestMatchers(POST,"/inscription").permitAll()
                                                 .requestMatchers(POST,"/connexion").permitAll()
                                                 .requestMatchers(POST,"/activation").permitAll()
-                                                .requestMatchers(GET,"recettes").permitAll()
-                                                .requestMatchers(GET,"ingredients").permitAll()
-                                                .requestMatchers(GET,"ingredientQuantites").permitAll()
+                                                .requestMatchers(GET,"recettes", "recettes/{id}").permitAll()
+                                               
                                                 .anyRequest().authenticated()
                         )
                         .sessionManagement(httpSecuritySessionManagementConfigurer ->

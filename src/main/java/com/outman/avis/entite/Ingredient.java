@@ -1,19 +1,16 @@
 package com.outman.avis.entite;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Ingredient {
 
     @Id
@@ -21,6 +18,7 @@ public class Ingredient {
     private int id;
 
     private String name;
-
     public Ingredient(int id){this.id = id;}
+
+
 }

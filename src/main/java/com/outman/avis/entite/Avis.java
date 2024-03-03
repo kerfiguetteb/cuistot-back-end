@@ -1,14 +1,14 @@
 package com.outman.avis.entite;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+import java.time.Instant;
 
 @Entity
 @Setter
 @Getter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Avis {
@@ -17,7 +17,7 @@ public class Avis {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String message;
-    private String statut;
-    @ManyToOne
+    private Instant creation;
+    @ManyToOne(cascade = CascadeType.ALL)
     private Utilisateur utilisateur;
 }
