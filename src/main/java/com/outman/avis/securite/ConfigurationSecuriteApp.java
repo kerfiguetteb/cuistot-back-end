@@ -17,6 +17,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import static org.springframework.http.HttpMethod.GET;
 import static org.springframework.http.HttpMethod.POST;
 
 @Configuration
@@ -26,7 +27,6 @@ public class ConfigurationSecuriteApp {
 
     private final JwtFilter jwtFilter;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
-
     private final UserDetailsService userDetailsService;
 
     public ConfigurationSecuriteApp(JwtFilter jwtFilter, BCryptPasswordEncoder bCryptPasswordEncoder, UserDetailsService userDetailsService) {
@@ -46,7 +46,8 @@ public class ConfigurationSecuriteApp {
                                                 .requestMatchers(POST,"/inscription").permitAll()
                                                 .requestMatchers(POST,"/connexion").permitAll()
                                                 .requestMatchers(POST,"/activation").permitAll()
-
+                                                .requestMatchers(GET,"recettes", "recettes/{id}").permitAll()
+                                               
                                                 .anyRequest().authenticated()
                         )
                         .sessionManagement(httpSecuritySessionManagementConfigurer ->

@@ -3,21 +3,20 @@ package com.outman.avis.entite;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.Instant;
-
 @Entity
-@Setter
 @Getter
-@Builder
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Avis {
+@Builder
+public class IngredientQuantite {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String message;
-    private Instant creation;
     @ManyToOne(cascade = CascadeType.ALL)
-    private Utilisateur utilisateur;
+    private Ingredient ingredient;
+    private int quantite;
+
+
 }

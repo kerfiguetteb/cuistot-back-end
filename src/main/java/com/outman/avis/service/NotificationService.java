@@ -24,7 +24,5 @@ public class NotificationService {
 
         javaMailSender.send(mailMessage);
 
-
-
     }
 }
